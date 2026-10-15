@@ -1,0 +1,671 @@
+/* ============================================================
+   USACO Plus — Common Styles (always injected)
+   ============================================================ */
+
+@keyframes usacoPlusFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ---- Modal System ---- */
+.usaco-plus-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  animation: usacoPlusFadeIn 0.15s forwards;
+}
+
+.usaco-plus-modal-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.usaco-plus-modal-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 55vw;
+  max-height: 80vh;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.usaco-plus-modal-wide {
+  width: 70vw;
+}
+
+.usaco-plus-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.usaco-plus-modal-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.usaco-plus-modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.usaco-plus-modal-close:hover {
+  color: #333;
+}
+
+.usaco-plus-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* ---- Button Group ---- */
+.usaco-plus-btn-group {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.usaco-plus-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9em;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none !important;
+  border: 1px solid #d0d0d0;
+  background: #f8f8f8;
+  color: #333;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.usaco-plus-btn:hover {
+  background: #e8e8e8;
+  border-color: #bbb;
+}
+
+.usaco-plus-btn.solved {
+  background: #e6f4ea;
+  border-color: #34a853;
+  color: #1e7e34;
+}
+
+/* ============================================================
+   DARK MODE — Explicit dark colors (no filter)
+   Every element gets explicit dark background + light text
+   ============================================================ */
+
+/* Page background */
+html.usaco-plus-dark,
+html.usaco-plus-dark body {
+  background: #1a1a1a !important;
+  color: #d4d4d4 !important;
+}
+
+/* Main containers */
+html.usaco-plus-dark .shadow1,
+html.usaco-plus-dark .shadow1 .content,
+html.usaco-plus-dark .panel,
+html.usaco-plus-dark .panel[style*="background"],
+html.usaco-plus-dark .sponsors {
+  background-color: #1a1a1a !important;
+  color: #d4d4d4 !important;
+  border-color: #333 !important;
+}
+
+/* All text elements — transparent background, light text */
+html.usaco-plus-dark p,
+html.usaco-plus-dark h1, html.usaco-plus-dark h2,
+html.usaco-plus-dark h3, html.usaco-plus-dark h4,
+html.usaco-plus-dark h5, html.usaco-plus-dark h6,
+html.usaco-plus-dark li, html.usaco-plus-dark span,
+html.usaco-plus-dark div, html.usaco-plus-dark td,
+html.usaco-plus-dark th, html.usaco-plus-dark label,
+html.usaco-plus-dark pre, html.usaco-plus-dark code,
+html.usaco-plus-dark b, html.usaco-plus-dark strong,
+html.usaco-plus-dark em, html.usaco-plus-dark i {
+  color: #d4d4d4 !important;
+  background-color: transparent !important;
+}
+
+html.usaco-plus-dark h1, html.usaco-plus-dark h2,
+html.usaco-plus-dark h3, html.usaco-plus-dark h4 {
+  color: #e8e8e8 !important;
+}
+
+/* Links */
+html.usaco-plus-dark a, html.usaco-plus-dark a:link,
+html.usaco-plus-dark a:visited {
+  color: #6ba3f7 !important;
+}
+html.usaco-plus-dark a:hover {
+  color: #89b4fa !important;
+}
+
+/* Navbar */
+html.usaco-plus-dark .navbar, html.usaco-plus-dark .navbar ul {
+  background-color: #1a1a1a !important;
+}
+html.usaco-plus-dark .navbar li { background-color: transparent !important; }
+html.usaco-plus-dark .navbar li a {
+  background-color: #252525 !important;
+  color: #d4d4d4 !important;
+}
+html.usaco-plus-dark .navbar li a:hover {
+  background-color: #333 !important;
+  color: #6ba3f7 !important;
+}
+
+/* ============================================
+   PROBLEM TEXT — the white stubborn area
+   Override EVERY possible element inside it
+   ============================================ */
+html.usaco-plus-dark .problem-text {
+  background-color: #1a1a1a !important;
+  color: #d4d4d4 !important;
+  border-color: #333 !important;
+}
+
+/* EVERY child element inside problem-text gets dark background */
+html.usaco-plus-dark .problem-text * {
+  background-color: #1a1a1a !important;
+  color: #d4d4d4 !important;
+}
+
+/* Specifically target <p>, <div>, <span>, <pre> inside problem text */
+html.usaco-plus-dark .problem-text p,
+html.usaco-plus-dark .problem-text div,
+html.usaco-plus-dark .problem-text span,
+html.usaco-plus-dark .problem-text pre,
+html.usaco-plus-dark .problem-text b,
+html.usaco-plus-dark .problem-text i,
+html.usaco-plus-dark .problem-text em,
+html.usaco-plus-dark .problem-text strong,
+html.usaco-plus-dark .problem-text a,
+html.usaco-plus-dark .problem-text ul,
+html.usaco-plus-dark .problem-text ol,
+html.usaco-plus-dark .problem-text li,
+html.usaco-plus-dark .problem-text table,
+html.usaco-plus-dark .problem-text td,
+html.usaco-plus-dark .problem-text th {
+  background-color: #1a1a1a !important;
+  color: #d4d4d4 !important;
+}
+
+/* Prob spec divs */
+html.usaco-plus-dark .prob-in-spec,
+html.usaco-plus-dark .prob-out-spec,
+html.usaco-plus-dark .prob-section {
+  background-color: #1a1a1a !important;
+  color: #d4d4d4 !important;
+}
+
+/* MathJax wrapper */
+html.usaco-plus-dark #probtext-text,
+html.usaco-plus-dark .mathjax,
+html.usaco-plus-dark span.mathjax {
+  background-color: #1a1a1a !important;
+  color: #d4d4d4 !important;
+}
+
+/* Status bar — inline white */
+html.usaco-plus-dark #last-status {
+  background-color: #1a1a1a !important;
+  color: #d4d4d4 !important;
+  border-color: #333 !important;
+}
+
+/* Language selector — inline gray */
+html.usaco-plus-dark #choose-language {
+  background-color: #1a1a1a !important;
+  color: #d4d4d4 !important;
+  border-color: #333 !important;
+}
+
+/* Code blocks */
+html.usaco-plus-dark pre.in, html.usaco-plus-dark pre.out,
+html.usaco-plus-dark pre, html.usaco-plus-dark code,
+html.usaco-plus-dark .mono {
+  background-color: #111 !important;
+  color: #d4d4d4 !important;
+  border-color: #333 !important;
+}
+
+/* ALL inputs */
+html.usaco-plus-dark input, html.usaco-plus-dark select,
+html.usaco-plus-dark textarea {
+  background-color: #1a1a1a !important;
+  color: #d4d4d4 !important;
+  border-color: #333 !important;
+}
+
+/* ALL buttons */
+html.usaco-plus-dark button,
+html.usaco-plus-dark button[type="button"],
+html.usaco-plus-dark input[type="submit"],
+html.usaco-plus-dark input[type="button"] {
+  background-color: #2a2a2a !important;
+  color: #d4d4d4 !important;
+  border-color: #444 !important;
+}
+html.usaco-plus-dark button:hover,
+html.usaco-plus-dark input[type="submit"]:hover {
+  background-color: #333 !important;
+}
+
+/* Tables */
+html.usaco-plus-dark table, html.usaco-plus-dark thead,
+html.usaco-plus-dark tbody, html.usaco-plus-dark tfoot,
+html.usaco-plus-dark tr, html.usaco-plus-dark td,
+html.usaco-plus-dark th {
+  background-color: #1a1a1a !important;
+  color: #d4d4d4 !important;
+  border-color: #333 !important;
+}
+
+/* Trial status */
+html.usaco-plus-dark .trial-status-no {
+  background-color: #3a1a1a !important;
+  border-color: #663333 !important;
+  color: #f0a0a0 !important;
+}
+html.usaco-plus-dark .trial-status-partial,
+html.usaco-plus-dark .trial-status-yes {
+  background-color: #1a3a1a !important;
+  border-color: #336633 !important;
+  color: #a0f0a0 !important;
+}
+html.usaco-plus-dark .trial-status-unknown {
+  background-color: #222 !important;
+  color: #d4d4d4 !important;
+}
+
+/* Form elements */
+html.usaco-plus-dark .field, html.usaco-plus-dark .field label {
+  color: #d4d4d4 !important;
+  background-color: transparent !important;
+}
+html.usaco-plus-dark .forgotpass { color: #d4d4d4 !important; }
+html.usaco-plus-dark .form_error { color: #f0a0a0 !important; }
+html.usaco-plus-dark .inline-block, html.usaco-plus-dark .inline-block * {
+  background-color: transparent !important;
+  color: #d4d4d4 !important;
+}
+
+/* Tooltips */
+html.usaco-plus-dark .tooltip {
+  background-color: #1a1a1a !important;
+  color: #d4d4d4 !important;
+}
+
+/* Keep images normal */
+html.usaco-plus-dark img {
+  filter: none !important;
+}
+
+/* Scrollbar */
+html.usaco-plus-dark ::-webkit-scrollbar { width: 8px; }
+html.usaco-plus-dark ::-webkit-scrollbar-track { background: #1a1a1a; }
+html.usaco-plus-dark ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+html.usaco-plus-dark ::-webkit-scrollbar-thumb:hover { background: #444; }
+
+/* Selection */
+html.usaco-plus-dark ::selection { background: #333; color: #e8e8e8; }
+
+/* Background after inversion — Meoww uses hsl(0,0%,93%) which becomes dark when inverted */
+html.usaco-plus-dark,
+html.usaco-plus-dark body {
+  background: hsl(0, 0%, 13%) !important;
+}
+
+/* Scrollbar */
+html.usaco-plus-dark ::-webkit-scrollbar {
+  width: 8px;
+}
+html.usaco-plus-dark ::-webkit-scrollbar-track {
+  background: hsl(0, 0%, 10%);
+}
+html.usaco-plus-dark ::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 25%);
+  border-radius: 4px;
+}
+html.usaco-plus-dark ::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 35%);
+}
+
+/* ---- Toggle Switch (for popup) ---- */
+.usaco-toggle {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 22px;
+}
+
+.usaco-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.usaco-toggle .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  border-radius: 22px;
+  transition: 0.2s;
+}
+
+.usaco-toggle .slider::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: white;
+  top: 2px;
+  left: 2px;
+  transition: 0.2s;
+}
+
+.usaco-toggle input:checked + .slider {
+  background-color: #2563eb;
+}
+
+.usaco-toggle input:checked + .slider::before {
+  transform: translateX(16px);
+}
+
+/* ============================================================
+   CUSTOM STYLE — Beautiful modern theme for USACO
+   Applied via .usaco-plus-theme class on <html>
+   ============================================================ */
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Page background */
+html.usaco-plus-theme {
+  background: #f0f2f5 !important;
+}
+
+html.usaco-plus-theme body {
+  background: transparent !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+}
+
+/* Remove the dark gray shadow frame */
+html.usaco-plus-theme .shadow1 {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* White content card */
+html.usaco-plus-theme .shadow1 .content {
+  background: #fff !important;
+  border-radius: 12px !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+  padding: 0 !important;
+  max-width: 960px !important;
+  margin: 12px auto !important;
+  border: none !important;
+}
+
+/* Panels — rounded cards */
+html.usaco-plus-theme .panel {
+  background: #fff !important;
+  border-radius: 10px !important;
+  border: 1px solid #e5e7eb !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  margin: 12px 16px !important;
+  padding: 16px 20px !important;
+}
+
+/* Login panel — override inline background */
+html.usaco-plus-theme .panel[style*="background"] {
+  background: #fff !important;
+}
+
+/* Navigation bar */
+html.usaco-plus-theme .navbar {
+  background: #fff !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  border-radius: 12px 12px 0 0 !important;
+  padding: 0 !important;
+}
+
+html.usaco-plus-theme .navbar ul {
+  display: flex !important;
+  gap: 2px !important;
+  padding: 6px 12px !important;
+  margin: 0 !important;
+  list-style: none !important;
+}
+
+html.usaco-plus-theme .navbar li {
+  list-style: none !important;
+}
+
+html.usaco-plus-theme .navbar li a {
+  background: transparent !important;
+  color: #4b5563 !important;
+  font-weight: 500 !important;
+  font-size: 0.92em !important;
+  padding: 8px 14px !important;
+  border-radius: 6px !important;
+  transition: all 0.15s !important;
+  text-decoration: none !important;
+}
+
+html.usaco-plus-theme .navbar li a:hover {
+  background: #f3f4f6 !important;
+  color: #2563eb !important;
+}
+
+/* Headings */
+html.usaco-plus-theme h1,
+html.usaco-plus-theme h2,
+html.usaco-plus-theme h3,
+html.usaco-plus-theme h4 {
+  color: #111827 !important;
+  font-weight: 600 !important;
+  font-family: 'Inter', sans-serif !important;
+}
+
+html.usaco-plus-theme h2 {
+  border-bottom: 2px solid #e5e7eb !important;
+  padding-bottom: 8px !important;
+}
+
+/* Links */
+html.usaco-plus-theme a,
+html.usaco-plus-theme a:link {
+  color: #2563eb !important;
+  text-decoration: none !important;
+  transition: color 0.15s !important;
+}
+html.usaco-plus-theme a:hover {
+  color: #1d4ed8 !important;
+  text-decoration: underline !important;
+}
+
+/* Tables */
+html.usaco-plus-theme table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+html.usaco-plus-theme th {
+  background: #f9fafb !important;
+  font-weight: 600 !important;
+  color: #374151 !important;
+  padding: 10px 14px !important;
+  border-bottom: 2px solid #e5e7eb !important;
+}
+
+html.usaco-plus-theme td {
+  padding: 10px 14px !important;
+  border-bottom: 1px solid #f3f4f6 !important;
+  color: #4b5563 !important;
+}
+
+html.usaco-plus-theme tr:hover td {
+  background: #f9fafb !important;
+}
+
+/* Buttons */
+html.usaco-plus-theme input[type="submit"],
+html.usaco-plus-theme button {
+  border-radius: 8px !important;
+  padding: 8px 20px !important;
+  font-weight: 500 !important;
+  font-family: 'Inter', sans-serif !important;
+  border: 1px solid #d1d5db !important;
+  background: #fff !important;
+  color: #374151 !important;
+  cursor: pointer !important;
+  transition: all 0.15s !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.usaco-plus-theme input[type="submit"]:hover,
+html.usaco-plus-theme button:hover {
+  background: #f9fafb !important;
+  border-color: #9ca3af !important;
+}
+
+html.usaco-plus-theme input[type="submit"] {
+  background: #2563eb !important;
+  color: #fff !important;
+  border-color: #2563eb !important;
+}
+
+html.usaco-plus-theme input[type="submit"]:hover {
+  background: #1d4ed8 !important;
+  border-color: #1d4ed8 !important;
+}
+
+/* Form inputs */
+html.usaco-plus-theme input[type="text"],
+html.usaco-plus-theme input[type="password"],
+html.usaco-plus-theme select,
+html.usaco-plus-theme textarea {
+  border-radius: 6px !important;
+  border: 1px solid #d1d5db !important;
+  padding: 6px 10px !important;
+  font-family: 'Inter', sans-serif !important;
+  transition: border-color 0.15s, box-shadow 0.15s !important;
+}
+
+html.usaco-plus-theme input[type="text"]:focus,
+html.usaco-plus-theme input[type="password"]:focus,
+html.usaco-plus-theme select:focus {
+  outline: none !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+}
+
+/* Language selector */
+html.usaco-plus-theme #choose-language {
+  background-color: #f9fafb !important;
+  border-radius: 6px !important;
+}
+
+/* Code blocks */
+html.usaco-plus-theme pre,
+html.usaco-plus-theme code,
+html.usaco-plus-theme pre.in,
+html.usaco-plus-theme pre.out {
+  background: #f8fafc !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  padding: 14px 18px !important;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace !important;
+  font-size: 0.88em !important;
+  line-height: 1.6 !important;
+}
+
+/* Problem text */
+html.usaco-plus-theme .problem-text {
+  background: #fff !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 10px !important;
+  padding: 20px 24px !important;
+  line-height: 1.7 !important;
+  font-size: 0.95em !important;
+}
+
+/* Status bar */
+html.usaco-plus-theme #last-status {
+  background: #f8fafc !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 8px !important;
+  color: #4b5563 !important;
+}
+
+/* Scrollbar */
+html.usaco-plus-theme ::-webkit-scrollbar {
+  width: 8px;
+}
+html.usaco-plus-theme ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+html.usaco-plus-theme ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+html.usaco-plus-theme ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Selection */
+html.usaco-plus-theme ::selection {
+  background: #bfdbfe;
+  color: #1e3a5f;
+}
+
+/* ============================================================
+   DARK MODE + CUSTOM STYLE — combined overrides
+   ============================================================ */
+html.usaco-plus-dark.usaco-plus-theme {
+  background: #1a1a1a !important;
+}
+
+html.usaco-plus-dark.usaco-plus-theme .shadow1 .content {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4) !important;
+  border-radius: 10px !important;
+}
+
+html.usaco-plus-dark.usaco-plus-theme .panel {
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3) !important;
+  border-radius: 8px !important;
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USACO Plus</title>
+  <style>
+    :root {
+      --bg: #f7f7f8;
+      --bg-dark: #1e1e20;
+      --text: #181818;
+      --text-dark: #e1e1e1;
+      --border: #e0e0e0;
+      --border-dark: #3a3a3c;
+      --accent: #2563eb;
+    }
+
+    body {
+      margin: 0;
+      width: 240px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background-color 0.2s, color 0.2s;
+    }
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .container {
+      padding: 12px 16px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .header img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .header .logo-text {
+      font-size: 1.1em;
+      font-weight: 700;
+      color: var(--accent);
+      margin-top: 4px;
+    }
+
+    h2 {
+      font-size: 0.8em;
+      font-weight: 600;
+      margin: 12px 0 6px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--border);
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    body.dark h2 {
+      border-bottom-color: var(--border-dark);
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 0;
+      font-size: 0.85em;
+      user-select: none;
+    }
+
+    .toggle {
+      cursor: pointer;
+    }
+    .toggle input[type=checkbox] {
+      display: none;
+    }
+    .toggle .switch {
+      position: relative;
+      display: inline-block;
+      width: 36px;
+      height: 20px;
+      background-color: #ccc;
+      border-radius: 20px;
+      transition: background-color 0.2s;
+      flex-shrink: 0;
+    }
+    .toggle .switch::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: white;
+      top: 2px;
+      left: 2px;
+      transition: transform 0.2s;
+    }
+    .toggle input:checked + .switch {
+      background-color: var(--accent);
+    }
+    .toggle input:checked + .switch::after {
+      transform: translateX(16px);
+    }
+
+    .shortcut-input {
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      border-radius: 4px;
+      padding: 3px 6px;
+      width: 80px;
+      font-size: 0.75em;
+      text-align: center;
+    }
+    body.dark .shortcut-input {
+      background: #2a2a2c;
+      border-color: var(--border-dark);
+      color: var(--text-dark);
+    }
+    .shortcut-input:focus {
+      outline: 2px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 10px;
+      padding-top: 6px;
+      border-top: 1px solid var(--border);
+      font-size: 0.65em;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="icons/128x128.png" alt="USACO Plus">
+      <div class="logo-text">USACO Plus</div>
+    </div>
+
+    <h2>Features</h2>
+    <div id="settings-list"></div>
+
+    <h2>Shortcuts</h2>
+    <div id="shortcuts-list"></div>
+
+    <div class="footer">Made for USACO competitors</div>
+  </div>
+
+  <script src="/browser-polyfill.min.js"></script>
+  <script src="/popup.js"></script>
+</body>
+</html>
